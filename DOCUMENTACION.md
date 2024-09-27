@@ -22,7 +22,6 @@ Por otro lado, el perfil desarrollador debería poder realizar comentarios de ca
 
 Finalmente, habrá un administrador que podrá **adminstrar el perfil** de cada uno de los usuarios registrados en la plataforma (editar, borrar, etc) así como modificar el rol de cada uno de estos. También tendrá **control total sobre los comentarios y valoraciones.**
 
-Here's the content converted to Markdown format:
 
 ## Fases de desarrollo
 Necesitamos organizarnos un poco. Vamos a planificar como vamos a llevar a cabo las diferentes fases para cumplir con nuestros objetivos:
@@ -78,7 +77,6 @@ A la hora de decidir la arquitectura a implementar en el desarrollo de nuestro p
 - Aspectos técnicos
 Vamos a analizar primero algunas de las posibilidades que podemos elegir para la implementación de nuestro proyecto.
 
-Here's the text formatted in Markdown:
 
 ## ¿Que arquitectura vamos a utilizar en nuestro proyecto?
 En nuestro caso nos **basaremos en CSR**, es decir, renderizamos todo el código html en el navegador. El cliente solo se encargará de responder a las peticiones devolviendo los datos solicitados (en formato json). De esta manera podemos dividir la implementación del proyecto en **FRONTEND y BACKEND**, separando cada funcionalidad y desarrollándola de manera independiente.
