@@ -9,3 +9,6 @@ El método de trabajo que se utiliza en dicha empresa consiste en proponer a cad
 Hasta la fecha, para el proceso de publicación de proyectos, comentarios y valoración utilizaban algunas herramientas ofimáticas, tipo hoja de cálculo de google. Actualmente pretenden crear una aplicación web tipo intranet para llevar a cabo este propósito.
 
 Como alumno en prácticas, tu trabajo consiste en crear una aplicación web que permitirá a los desarrolladores de Vanilla Games, publicar sus propuestas de minijuegos, de manera que el resto de compañeros podrá hacer comentarios y emitir una valoración de cada proyecto publicado en esta plataforma.
+
+# Diagrama de casos de uso para la versión 1.0
+![Diagrama de Casos de Uso](recursos/diagramaCasosDeUso.png)
