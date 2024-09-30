@@ -325,3 +325,180 @@ Vamos a repasar los diferentes casos de uso analizando el flujo principal y aña
 4. **Error de autorización:** Si un usuario intenta realizar una acción que no está autorizada para realizar debido a su rol, **el sistema debería mostrar un mensaje de error indicando que la acción no está autorizada** y ofrecer la posibilidad de volver a la página anterior.
 
 5. **Error de servidor:** En caso de que se produzca un error interno en el servidor, como una excepción no controlada, **el sistema debería mostrar un mensaje de error genérico indicando que se produjo un error** y ofrecer la posibilidad de volver a intentarlo o contactar con el soporte técnico.
+
+## Diseño de la interfaz. Bocetos
+Una vez tenemos claro las funcionalidades que debe realizar nuestra aplicación, comenzamos con el diseño de la interfaz.
+
+Este proceso incluye diseñar los bocetos, los wireframes y los mockups ,para acabar creando los prototipos con html.
+
+Sin duda, el primer paso, debe ser dibujar los bocetos, así que, busca un lápiz, una goma de borrar y un puñado de papel, ¡y manos a la obra!
+
+### Diseño de bocetos
+#### Home y menús usuarios
+
+![Boceto home y menús](recursos/header-boceto.jpg)
+
+Hemos didivido la interficie en 3 zonas, el encabezado (header), el cuerpo principal (main) y el pie de página (footer).
+
+- En el header vamos a alojar una barra superior fija con: el logo y nombre de la web (que hará las veces de link a la página principal), un menú central genérico (para acceder a páginas públicas), un menú central específico (que será diferente en función del rol de usuario logueado), y un icono (avatar) que permitirá ver la imagen del usuario logueado y que hará de botón para desplegar otro menú, el menú de usuario (que tendrá diferentes items dependiendo de si la sesió está abierta o no y del tipo de rol que tenga el usuario logueado).
+
+- El cuerpo (main) albergará el contenido de las páginas. Será la sección que vaya cambiando dependiendo de la página que carguemos. En la página home simplemente aparece una imagen de fondo y el nombre de la web.
+
+- El header será meramente informativo.
+
+#### Regitro de un usuario
+![Boceto Registro Usuario](recursos/registro-boceto.jpg)
+
+#### Iniciar sesión
+![Boceto Iniciar Sesión](recursos/iniciar-sesion-boceto.jpg)
+
+#### Editar mi perfil
+![Boceto editar mi perfil](recursos/editar-perfil-boceto.jpg)
+Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
+
+Esta ventana de edición permitirá, además de modificar los datos del usuario, **añadir una imagen de avatar.** Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan **subirse archivos** (imágenes) al servidor.
+
+#### Listado de todos los proyectos
+![Boceto Listado de todos los proyectos](recursos/listado-proyectos.jpg)
+En esta página podemos ver, en la pestaña izquierda, todos los proyectos en forma de tabla. La pestaña derecha mostrará solo los proyectos que ha subido el usuario que ha iniciado la sesión.
+
+Al hacer clic en cualquier parte de la fila se accede al detalle del proyecto.
+
+También tenemos un buscador que permite buscar proyectos por palabras clave en el nombre o descripción.
+
+Las celdas de encabezado de las tablas incluyen un icono (flecha hacia arriba o hacia abajo) que permitirá ordenar la tabla por la columna en concreto.
+
+#### Listado de mis proyectos
+![Boceto listado de mis proyectos](recursos/listado-proyectos.jpg)
+
+En esta pestaña podemos ver los trabajos pertenecientes al usuario logueado. En cada fila aparece, además, un icono para editar y borrar el proyecto correspondiente. Por otro lado tenemos la opción de subir un nuevo proyecto.
+
+_Habría que valorar si es mejor crear un único buscador para el nombre y descripción del proyecto o dos barras de busqueda, una para cada sección, tal y como se muestra en el boceto anterior._
+
+#### Detalle de un proyecto
+![Boceto detalle de un proyecto](recursos/detalle-proyecto-boceto.jpg)
+
+Si el usuario que está viendo la información de un proyecto en concreto es el autor de dicho proyecto, aparecerá un icono para la edición del mismo.
+
+
+#### Nuevo proyecto / Editar un proyecto
+![Boceto nuevo proyecto / editar un proyecto](recursos/nuevop-editarp-boceto.jpg)
+
+Esta vista sirve tanto para crear un nuevo proyecto como para editarlo.
+
+Si el proyecto es nuevo, el botón mostrará el texto _ENVIAR_, pero si estamos editándolo aparecerá el texto _ACTUALIZAR_. Al crear o actualizar el proyecto, la web nos reenvía a la vista 'Detalle de proyecto'.
+
+#### Panel administración de proyectos
+![Boceto panel administració de proyectos](recursos/panel-boceto-admin-proyectos.jpg)
+
+Si tienes el rol 'administrador' aparecerá el item 'Panel administración' en el menú superior específico. Este item nos permite cargar la vista 'Panel administración de proyectos'. Desde esta vista también podemos acceder al 'Panel administración de usuarios'.
+
+Esta vista permite editar o borrar cualquier proyecto haciendo click en los iconos correspondientes. La opción editar nos llevará a la vista 'Editar proyecto'
+
+#### Panel administración de usuarios
+![Boceto panel administració usuarios](recursos/panel-boceto-admin-usuarios.jpg)
+
+Esta vista permite **editar los datos de los usuarios.** Por supuesto es solo accesible para los administradores.
+
+En esta vista, el método para editar la información es diferentes. Aquí los datos **aparecen sobre 'inputs'**, de manera que al hacer clic sobre ellos, aparecerá el cursor de edición. Se pueden modificar todos los datos (en especial el _'estado'_ y el _'rol'_ del usuario) excepto el email.
+
+
+## Hist3b - Test de usuarios inicial
+
+### Primer Test de Usabilidad
+
+Tal y como hemos comentado en el apartado 'Diseño centrado en el usuario', una de las premisas de esta metodología consiste en realizar evaluaciones constantes para detectar los posibles problemas de usabilidad cuanto antes mejor. Por lo que una buena idea es realizar un primer test de usabilidad.
+
+Por el momento os adelanto que la técnica más utilizada par evaluar la usabilidad son los 'tests de usuario'.
+
+Estos consisten en crear una bateria de acciones que el usuario debe realizar, para detectar si existe algún problema en la interación con la aplicación. A continuación vamos pidiendo a un usuario focal (una persona que esté dentro del target de usuarios a quien va dirigida la app) que realice cada tarea, mostrandole los bocetos que aparecerán en cada interacción. Por ejemplo, si hace clic sobre el item de menú 'login' le mostraremos el boceto de la página 'login'.
+
+Para este primer test hemos preparado las siguientes acciones:
+
+Suponiendo que eres un usuario no registrado:
+
+1. Accede a la información general 'A cerca de' de esta web.
+2. Regístrate.
+3. Logueate.
+4. Modifica tu perfil añadiendo una imagen de avatar.
+5. Busca un proyecto llamado 'Tetris'.
+6. Accede al detalle de este proyecto.
+7. Cierra sesión.
+
+Suponiendo que eres un usuario con rol 'Desarrollador':
+
+1. Crea un proyecto nuevo.
+2. Accede a la lista de tus proyectos.
+3. Muestra el detalle de tu nuevo proyecto.
+4. Edita tu proyecto cambiando la descripción.
+5. Borra tu proyecto.
+
+Suponiendo que eres un usuario con rol 'Administrador':
+
+1. Muestra la lista de proyectos.
+2. Borra un proyecto.
+3. Modifica el nombre de un proyecto.
+4. Muestra la listra de todos los usuarios registrados.
+5. Canvia el rol de uno de ellos.
+6. Modifica la imagen de su avatar.
+
+> **Nota**
+> Las acciones del test de usuarios han sido realizadas por una persona de 20 años, con estudios universitarios y acostumbrado a navegar por la red y usar herramientas ofimáticas.
+
+### Conclusiones y modificaciones
+
+De este primer test de usuario se desprenden las siguientes conclusiones:
+
+- La vista de proyectos en forma de tabla no es muy atractiva.
+- El usuario ha tenido dificultades a la hora de intentar modificar la imagen avatar de un usuario.
+
+Para mejorar estos pequeños problemas de usabilidad vamos a tomar las siguientes acciones:
+
+1. En la vista de proyectos vamos crear un par de botones para poder alternar entre ver los proyectos en forma de tabla o en forma de tarjetas.
+2. En la vista de administración de usuarios, añadir un pequeño icono (un lápiz) sobre la imagen del avatar del usuario para que se intuya que, al hacer clic sobre la imagen, se accede a la ventana de modificación de perfil.
+
+Estos serían los bocetos actualizados:
+
+#### Vista de proyectos
+
+![Boceto Listado de todos los proyectos](recursos/listado-proyectos.jpg)
+![Boceto listado de mis proyectos](recursos/listado-proyectos.jpg)
+![Boceto detalle de un proyecto](recursos/detalle-proyecto-boceto.jpg)
+![Boceto nuevo proyecto / editar un proyecto](recursos/nuevop-editarp-boceto.jpg)
+![Boceto panel administració de proyectos](recursos/panel-boceto-admin-proyectos.jpg)
+#### Vista del Panel de administraición de usuarios.
+![Boceto panel administración de proyectos](recursos/panel-boceto-admin-proyectos.jpg)
+
+Ahora que tenemos los bocetos creados y testeados, es el momento de pasar al siguiente nivel: El diseño de los wireframes.
+
+
+## Hist4 - Wireframe, mockup y guía de estilos
+
+En el apartado anterior hemos diseñado y testeado los bocetos para la versión 1.0 de nuestro proyecto.
+
+El siguiente paso, si nos basamos en el **DCU** (Diseño centrado en el usuario), sería diseñar los **wireframes** y, una vez tenemos los wireframes, los **mockups** junto a la **guía de estilos**.
+
+### Recuerda que...
+
+- **Boceto**: Un dibujo rápido que representa ideas.
+- **Wireframe**: Una representación estructural y esquemática.
+- **Mockup**: Una versión visualmente detallada del diseño.
+- **Guía de estilos**: Establece las pautas visuales y de diseño para un proyecto.
+
+Un proyecto de mayor envergadura requeriría de un equipo de trabajo con más de un perfil. La tarea de diseñar la interfaz corresponde, por un lado, al arquitecto de la información y por otro, a un diseñador gráfico.
+
+### ¿Y nosotros, necesitamos wireframe? ¿y mockup? ¿y guía de estilos?
+
+En nuestro caso, como el proyecto es muy básico, no nos vamos a centrar en aquellas tareas que corresponderían a un arquitecto de la información ni a un diseñador gráfico.
+
+El mapa web de nuestra aplicación se limita a dar acceso a los proyectos y la administración de los usuarios. Sería tan sencillo como este:
+
+En cuanto al diseño gráfico, aunque es una misión emocionante, nos vamos a limitar a trabajar con un tema de **Bootstrap** utilizando **Bootswatch**, respetando, a priori, su paleta de colores y modificando solo en algunos casos algunos detalles como la fuente para los títulos.
+
+### Nota
+
+Puedes ver el aspecto del tema que vamos a utilizar en el siguiente enlace: [Bootswatch Cosmo](https://bootswatch.com/cosmo/).
+
+### ¿Qué es Bootswatch?
+
+Bootswatch es una biblioteca de temas (themes) para Bootstrap, un popular framework de desarrollo web. Al utilizar Bootswatch, puedes cambiar fácilmente la apariencia de tu proyecto de Bootstrap simplemente importando los archivos CSS correspondientes al tema deseado. Esto te permite ahorrar tiempo y esfuerzo al no tener que crear los estilos desde cero.
