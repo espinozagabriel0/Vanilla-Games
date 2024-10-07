@@ -604,3 +604,550 @@ Ahora que tenemos Git instalado en nuestro ordenador, vamos crearnos una cuenta 
 2. Crea una cuenta e inicia sesión.
 3. Ahora vamos a crear un proyecto de prueba con vscode, craremos un repositorio y lo sincronizaremos con github.
 
+## Hist6 - Maquetación de prototipos
+
+### Comenzamos a maquetar con Bootstrap
+#### Frameworks como marco de trabajo en Javascript
+
+No nos engañemos. En la mayoría de empresas de desarrollo web hacen trampas. Son pocas las que crean aplicaciones con html, css y javascript puro. La mayoría utilizar librerías que nos facilitan el trabajo. Es más, la casi todos os desarrolladores trabajan con lo que conocemos como frameworks.
+
+##### ¿Qué es un framework para el desarrollo de apps en javascript?
+Un framework para el desarrollo frontend es una estructura o conjunto de herramientas predefinidas diseñadas para facilitar y agilizar la creación de interfaces de usuario interactivas y atractivas en aplicaciones web.
+Estos frameworks proporcionan una base sólida de código, patrones de diseño y componentes reutilizables que permiten a los desarrolladores construir interfaces de usuario de manera más eficiente y coherente.
+
+Las características comunes de los frameworks de desarrollo frontend incluyen:
+
+- **Componentización**: Los frameworks frontend generalmente promueven la creación de componentes reutilizables. Los componentes son piezas de interfaz de usuario autónomas y autocontenidas que pueden ser combinadas y reutilizadas en toda la aplicación.
+
+- **Gestión de estados**: Muchos frameworks ofrecen soluciones para gestionar el estado de la aplicación, lo que permite manejar la lógica y la interacción de manera organizada y escalable.
+
+- **Enrutamiento**: Los frameworks suelen proporcionar herramientas para administrar el enrutamiento en aplicaciones de una sola página (SPA) y asegurar que las diferentes partes de la interfaz de usuario se muestren correctamente en función de la URL actual.
+
+- **Interacción y dinamismo**: Estos frameworks a menudo incluyen funcionalidades para manejar interacciones en tiempo real, animaciones y actualizaciones dinámicas en la interfaz de usuario.
+
+- **Compatibilidad con dispositivos**: Muchos frameworks se centran en la creación de aplicaciones web receptivas que funcionen en una variedad de dispositivos y tamaños de pantalla.
+
+- **Optimización de rendimiento**: Los frameworks suelen incorporar optimizaciones de rendimiento, como el uso de un Virtual DOM (en el caso de React) para reducir la cantidad de actualizaciones de la interfaz de usuario y mejorar la velocidad de respuesta.
+
+- **Herramientas de desarrollo**: Muchos frameworks vienen con herramientas y utilidades que facilitan la depuración, la prueba y la optimización del código.
+
+Algunos ejemplos de frameworks frontend populares incluyen:
+
+ - React,
+ - Angular,
+ - Vue.js y
+ - Svelte.
+
+> **NOTE**
+> En este proyecto nosotros no vamos a utilizar ninguno de estros frameworks, ya que uno de los objetivos de esta documentación es poner en práctica los conocimientos adquiridos durante el ciclo, principalmente Javascript, que en definitiva es la base de todos estos marcos de trabajo.
+
+####  Frameworks para la maquetación html/css
+Ahora bien, para la maquetación sí que vamos a utilizar un poco de ayuda 😅.
+
+Los frameworks de diseño o bibliotecas proporcionan estilos predefinidos y componentes reutilizables para ayudarte a construir interfaces de usuario más rápidamente.
+
+Los más populares en son:
+
+- Bootstrap
+- Tailwind CSS
+
+##### Bootstrap:
+Bootstrap es uno de los frameworks de diseño más populares. Proporciona una amplia gama de componentes y estilos predefinidos basados en HTML, CSS y JavaScript. Es altamente personalizable y es ideal para crear sitios web responsivos y modernos.
+
+##### Tailwind CSS:
+Tailwind CSS es un framework que se diferencia por su enfoque de "clases utilitarias". En lugar de proporcionar componentes predefinidos, Tailwind CSS ofrece una amplia gama de clases CSS que permiten construir diseños personalizados de manera eficiente.
+
+Estos frameworks de diseño y bibliotecas pueden ser muy útiles para agilizar el proceso de desarrollo frontend al proporcionar estilos coherentes y componentes reutilizables. La elección del framework dependerá de tus preferencias de diseño, las necesidades de tu proyecto y cómo se adapte a tu flujo de trabajo.
+
+> **BOOTSTRAP**
+Para nuestro proyecto nosotros utilizaremos **Bootstrap**, ya que, de momento, es el más utilizado en las empresas de desarrollo (al menos en el momento de escribir esta guía).
+
+👉 Aquí tienes la web oficial de la última versión de Bootstrap: https://getbootstrap.com/
+
+👉 Y aquí tienes un enlace a la documentación de Booststrap 5 en español: https://getbootstrap.esdocu.com/, de la mano de ['esdocu'](https://esdocu.com/)
+
+### Home
+#### _HOME_ Versión escritorio
+![version escritorio](recursos/vanilla-games-desk.png)
+
+#### _HOME_ Versión móvil
+![version móvil](recursos/vanilla-games-mobile.png.png)
+
+#### Entorno de desarrollo
+Vamos a comenzar a maquetar los prototipos para nuestro proyecto.
+
+En primer lugar abre el VSCode y arrastra tu carpeta del proyecto. Si no recuerdo mal, se llamaba vanillagames10
+
+Ahora deberías ver en la parte inferior izquierda de vscode el **nombre de la rama en la que estás situado.** Deberías estar en la rama prototipos, si no es así, puedes cambiar de rama haciendo clic (con el botón izquierdo) sobre el nombre de la rama.
+
+#### Procedimiento
+Comenzamos a maquetar la página home. De manera resumida debemos seguir los siguientes pasos:
+
+1. Creamos plantilla html
+   - Modificamos lang y title
+   - Vinculamos la libreria css para bootstrap y bootswatch
+   - Vinculamos la librería de iconos de boostrap
+   - Vinculamos el js de bootstrap.
+2. Creamos la estructura de la web dentro del body con las etiquetas header, main y footer
+3. Copiamos el componente menú de la documentación de bootstrap (navbar) y lo modificamos    para que se ajuste a nuestro prototipo. Lo usamos tanto en el header como en el footer.
+4. Creamos, en el main, un h1 y una imagen.
+
+Aquí puedes ver el código utilizado:
+```<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- Bootswatch CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/yeti/bootstrap.min.css"
+        />
+        <!-- Bootstrap icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+        <!-- Mis estilos personales  -->
+        <link rel="stylesheet" href="styles.css" />
+
+        <title>Vanilla Games</title>
+    </head>
+    
+    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"
+                        ><img
+                            src=".images/logo.svg"
+                            alt=""
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+
+                        Vanilla Games</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">TOP5 Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">A cerca de</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <button class="ms-2 btn btn-success">
+                                    Iniciar sesión
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="ms-2 btn btn-outline-light">
+                                    Regístrate
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="mt-5 text-center fw-bold" style="font-size: 100px;">Vanilla Games</h1>
+                <div class="m-5 mx-auto" style="max-width: 400px">
+                    <img
+                            src=".images/logo.svg"
+                            alt="fpllefia"
+                            class="img-fluid"
+                        />
+                </div>
+            </div>
+        </main>
+        <footer class="">
+            <nav class="navbar bg-secondary fixed-bottom small">
+                <div class="container">
+                    <a class="navbar-brand fs-6" href="http://www.fpllefia.com">
+                        <img
+                            src=".images/logo.svg"
+                            alt="fpllefia"
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+                        FPLlefià
+                    </a>
+                    <span class="navbar-text">DAW - Asignatura de proyectos</span>
+                    <a href="#" class="nav-link">carrebola GITHUB</a>
+                </div>
+            </nav>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+
+```
+
+### Registro
+#### _REGISTRO_ Versión escritorio
+![registro vista escritorio](recursos/registro-version-desk.png)
+
+#### _REGISTRO_ Versión móvil
+![registro vista móvil](recursos/vanilla-games-mobile.png)
+
+#### Procedimiento
+Para maquetar la página registro.html podemos partir de la página home.html haciendo una copia y modificando la etiqueta main.
+
+De manera resumida debemos seguir los siguientes pasos:
+
+1. Modificamos la página home eliminando el botón registro del menú y el contenido de la etiqueta main excepto el h1 que modificaremos.
+2. Cremos un div con una anchura máxima usando el atributo style y dentro creamos un formulario con los campos correspondientes.
+
+```
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/yeti/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+        <title>Registro</title>
+    </head>
+    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"
+                        ><img
+                            src=".images/logo.svg"
+                            alt=""
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+
+                        Vanilla Games</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">TOP5 Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">A cerca de</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <button class="ms-2 btn btn-success">
+                                    Iniciar sesión
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="mt-5 text-center">Registro</h1>
+                <div class="m-5 mx-auto" style="max-width: 400px">
+                    <form action="" class="form border shadow-sm p-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input id="nombre" type="text" class="form-control" />
+                        <label for="apellidos" class="form-label">Apellidos:</label>
+                        <input id="apellidos" type="text" class="form-control" />
+                        <label for="email" class="form-label">Email:</label>
+                        <input id="email" type="text" class="form-control" />
+                        <label for="pass" class="form-label mt-3">Contraseña:</label>
+                        <input id="pass" type="password" class="form-control" />
+                        <a class="btn btn-primary w-100 mt-3" href="#">Enviar</a>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="">
+            <nav class="navbar bg-secondary fixed-bottom small">
+                <div class="container">
+                    <a class="navbar-brand" href="http://www.fpllefia.com">
+                        <img
+                            src=".images/logo.svg"
+                            alt="fpllefia"
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+                        FPLlefià
+                    </a>
+                    <span class="navbar-text">@Texto de header</span>
+                    <a href="#" class="nav-link">Vínculo header</a>
+                </div>
+            </nav>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+
+```
+
+### Login
+#### _LOGIN_ Versión escritorio
+![vista escritorio](recursos/login-version-desk.png)
+
+#### _LOGIN_ Versión móvil 
+![vista móvil](recursos/login-version-mobile.png)
+
+#### Procedimiento
+
+Para maquetar la página login.html podemos partir de la página registro.html haciendo una copia y modificando la etiqueta main.
+
+De manera resumida debemos seguir los siguientes pasos:
+
+1. Modificamos la página home eliminando el botón login del menú y el contenido de la etiqueta main excepto el h1 que modificaremos.
+2. Creamos un div con una anchura máxima de 400px usando el atributo style y dentro creamos un formulario con los campos correspondientes.
+3. Finalmente añadimos un enlace para actualizar la contraseña y un botón para registrarte si no lo estás.
+
+```
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/yeti/bootstrap.min.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="stylesheet" href="styles.css" />
+        <title>Login</title>
+    </head>
+    <body class="pt-5" style="overflow-x: hidden; padding-bottom: 100px">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#"
+                        ><img
+                            src=".images/logo.svg"
+                            alt=""
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+
+                        Vanilla Games</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">TOP5 Proyectos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">A cerca de</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <button class="ms-2 btn btn-outline-light">
+                                    Regístrate
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <h1 class="mt-5 text-center">Inicia sesión</h1>
+                <div class="m-5 mx-auto" style="max-width: 400px">
+                    <form action="" class="form border shadow-sm p-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" class="form-control" />
+                        <label for="pass" class="form-label mt-3">Contraseña:</label>
+                        <input id="pass" type="password" class="form-control" />
+                        <div class="form-check mt-3">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckChecked"
+                                checked
+                            />
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Recordar sesión
+                            </label>
+                        </div>
+                        <a class="d-block text-end" href="#">¿Has olvidado tu contraseña?</a>
+                        <a class="btn btn-primary w-100 mt-3" href="#">Iniciar sesión</a>
+                    </form>
+                    <a class="d-block mt-5 btn btn-secondary mx-auto" href="#"
+                        >¿Eres nuevo? Regístrate</a
+                    >
+                </div>
+            </div>
+        </main>
+        <footer class="">
+            <nav class="navbar bg-secondary fixed-bottom small">
+                <div class="container">
+                    <a class="navbar-brand" href="http://www.fpllefia.com">
+                        <img
+                            src=".images/logo.svg"
+                            alt="fpllefia"
+                            width="30"
+                            height="24"
+                            class="d-inline-block align-text-top"
+                        />
+                        FPLlefià
+                    </a>
+                    <span class="navbar-text">@Texto de header</span>
+                    <a href="#" class="nav-link">Vínculo header</a>
+                </div>
+            </nav>
+        </footer>
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+
+
+```
+
+### Editar perfil
+
+
+```
+```
+
+### Proyectos
+
+
+
+```
+```
+### Detalle proyecto
+
+
+
+```
+```
+### Nuevo proyecto y Editar proyecto
+
+
+
+```
+```
+### Admin Usuarios y Admin Proyectos
+
+
