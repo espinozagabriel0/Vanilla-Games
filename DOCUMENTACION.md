@@ -502,3 +502,105 @@ Puedes ver el aspecto del tema que vamos a utilizar en el siguiente enlace: [Boo
 ### ¿Qué es Bootswatch?
 
 Bootswatch es una biblioteca de temas (themes) para Bootstrap, un popular framework de desarrollo web. Al utilizar Bootswatch, puedes cambiar fácilmente la apariencia de tu proyecto de Bootstrap simplemente importando los archivos CSS correspondientes al tema deseado. Esto te permite ahorrar tiempo y esfuerzo al no tener que crear los estilos desde cero.
+
+
+
+
+## Hist5 - Entorno de desarrollo
+
+### Comenzamos el SPRINT 2 - PROTOTIPOS
+
+Comenzamos el sprint 2 que incluye tres historias: La configuración del entorno de desarrollo, la maquetación de los bocetos y la implementación de la validación de los formularios.
+
+
+> "Dame seis horas para cortar un árbol y pasaré las primeras cuatro afilando el hacha." – Abraham Lincoln
+
+Si queremos ser eficientes en la creación de aplicaciones web, lo mejor es empezar por configurar bien nuestro entorno de desarrollo. Para ello vamos a instalar/configurar las siguientes herramientas:
+
+- Un buen software para escribir nuestro código. En nuestro caso usaremmos el programa VSCode de Microsoft.
+- Instalación del software para el control de versiónes. Nosotros instalaremos GIT.
+- Una aplicación web para sincronizar nuestro repositorio en la nube. En nuestro caso será GitHub.
+
+#### 1. VSCode
+
+Sin duda, en le momento de escribir esta documentación, el rey de los IDs es, sin duda, Visual Studio Code (VSCode).
+
+> VSCode es un programa muy útil para escribir código. Es como una navaja suiza para los desarrolladores. Te permite editar y organizar tus archivos de código de manera fácil y rápida. Además, tiene un montón de extensiones y herramientas fantásticas que te facilitan la vida, como autocompletado, depuración y control de versiones. En resumen, es como el mejor amigo de un programador, siempre dispuesto a ayudarte a escribir código de manera eficiente.
+
+Os hago un resumen de algunas aspectos que debes tener en cuenta a la hora de instalar y configurar VSCode, y te pondré información ampliada ya que es un tema muy trillado en internet:
+
+##### 1.1. Descarga e instala VSCode
+
+[Puedes encontrar la versión oficial de vscode aquí](url_de_descarga)
+
+##### 1.2. Elige el tema que más te guste.
+
+Puedes tunear tu VSCode instalando diferentes temas. Para ello:
+
+1. Desde el buscador de extensiones (ctrl + mayus + X) escribe el nombre del tema que quieres instalar.
+2. Haz clic en instalar extensión.
+3. Desde el icono de configuración de vscode (la tuerquecita de abajo a la izquierda) selecciona 'Temas > Tema de color'
+4. Selecciona el tema que has instalado y... ¡ya lo tienes!
+
+
+##### 1.3. Instala un tema de iconos, por ejemplo VSCode Icons o Material Icon
+
+Para instalar los iconos el proceso es el mismo:
+
+1. Desde el buscador de extensiones escribe el nombre del tema de iconos
+2. En configuración, selecciona 'Tema > Tema de icono de archivo' y busca el tema instalado.
+3. Ahora verás que en la columna de la izquierda, cada archivo tiene un icono diferente en función de su extensión: html, css, etc.
+
+##### 1.4. Extensiones
+
+Con las extensiones puedes aumentar la potencia y mejorar tu flujo de trabajo.
+
+##### Prettier
+
+Una de las extensiones que te recomiendo sí o sí es 'Prettier'. Esta extensión se va a encargar de formatear tu código HTML y CSS port tí, respetando las identaciones. El proceso para instalar esta extensión es muy simple, solo tienes que buscar la extensión en el buscador y darle a instalar.
+
+
+##### Live Server
+
+Otra extensión imprescindible para nosotros es Live Server. Mediante esta extensión podremos tener un servidor virtual que mostrará el resultado de nuestro trabajo en un navegador, con la ventaja de que la vista se irá actualizando conforme vamos modificando el código.
+
+Existen infinidad de extensiones para VSCode Aquí puedes ver un ejemplo de mi entorno. Utilizo el tema Night Owl y los iconos de VSCode Icons. Fijate que el código html está formateado con Prettier
+
+De momento, con esto es suficiente para comenzar a trabajar en el desarrollo de los prototipos html y css. Más adelante acabaremos de configurar nuestro entorno para trabajar con NodeJS y otras herramientas que nos ayudarán a programar de forma más eficiente.
+
+#### 2. Control de versiones - Git
+
+Para el control de versiones vamos a instalar y configurar Git. Aunque seguro que a estas alturas ya sabes qué es Git, pero deja que te refresque algunas ideas importantes:
+
+> ✔ Git es como un superpoderoso control de versiones para tu código. Imagina que estás escribiendo un ensayo importante y cada vez que haces cambios guardas una nueva versión en diferentes archivos, como "ensayo_v1", "ensayo_v2" y así sucesivamente. Git hace algo similar pero para tu código.
+
+> ✔ Con Git, puedes guardar diferentes versiones de tu proyecto a medida que avanzas. Esto significa que si cometes un error o quieres volver a una versión anterior, ¡es pan comido! Git te permite viajar en el tiempo y regresar a cualquier punto en la historia de tu proyecto.
+
+> ✔ Pero eso no es todo. Git también es excelente para trabajar en equipo. Puedes colaborar con otros programadores sin pisar los pies de nadie. Cada persona puede trabajar en su propia versión del proyecto y luego combinar los cambios de todos de manera ordenada.
+
+> ✔ Además, Git hace que compartir tu código sea súper fácil. Puedes subir tu proyecto a un repositorio en línea (como GitHub o GitLab) y otras personas pueden descargarlo y contribuir. Incluso puedes colaborar con desarrolladores de todo el mundo en proyectos de código abierto.
+
+```
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com  
+```
+
+Sólo necesitas hacer esto una vez si especificas la opción --global, ya que Git siempre usará esta información para todo lo que hagas en ese sistema
+
+
+#### 3. Repositorio en linea - Github
+
+Ahora que tenemos Git instalado en nuestro ordenador, vamos crearnos una cuenta en Github para poder sincronizar todo nuestro trabajo en la nube.
+
+##### ¿Qué es y para que sirve Github?
+
+✔️ GitHub es una especie de red social para programadores. Es un lugar en línea donde los desarrolladores pueden compartir y trabajar en proyectos de software.
+
+✔️ Funciona como un repositorio donde se guarda el código de diferentes versiones de un proyecto. Permite la colaboración entre programadores, quienes pueden ver y sugerir cambios en el código.
+
+✔️ Es una herramienta muy popular y útil en la comunidad de desarrollo de software.
+
+1. En primer lugar vamos a acceder github.com
+2. Crea una cuenta e inicia sesión.
+3. Ahora vamos a crear un proyecto de prueba con vscode, craremos un repositorio y lo sincronizaremos con github.
+
